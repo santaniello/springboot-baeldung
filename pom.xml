@@ -6,6 +6,11 @@
 	<modules>
 		<module>domain</module>
 		<module>infrastructure-mongo</module>
+		<module>boot</module>
+		<module>infrastructure-redis</module>
+		<module>rest</module>
+		<module>application</module>
+		<module>test</module>
 	</modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
