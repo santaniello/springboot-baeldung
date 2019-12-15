@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class UserAppService {
 
@@ -24,7 +26,11 @@ public class UserAppService {
     }
 
     public void save(UserDTO dto){
-        var user = mapper.map(dto, UserMongo.class);
-        repository.save(user);
+        UserMongo userMongo = mapper.map(dto, UserMongo.class);
+        repository.save(userMongo);
+    }
+
+    public List<User> findAll(){
+        return repository.findAll();
     }
 }
