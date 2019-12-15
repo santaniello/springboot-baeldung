@@ -11,5 +11,6 @@ public class UserMongo implements User{
     @Id
     @Field("_id")
     private Long id;
+
     private String name;
 }
