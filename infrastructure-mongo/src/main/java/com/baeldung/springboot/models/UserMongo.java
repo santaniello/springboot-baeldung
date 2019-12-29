@@ -5,12 +5,13 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
+import javax.validation.constraints.NotNull;
+
 @Data
 @Document(collection = "user")
 public class UserMongo implements User{
     @Id
     @Field("_id")
     private Long id;
-
     private String name;
 }

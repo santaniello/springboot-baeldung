@@ -1,8 +1,6 @@
 package com.baeldung.springboot.models;
 
-public interface User {
-    Long getId();
-    void setId(Long id);
+public interface User extends Resource {
     String getName();
     void setName(String name);
 }
