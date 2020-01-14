@@ -1,14 +1,19 @@
 package com.baeldung.springboot.exceptions;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
+import org.apache.commons.lang3.exception.ExceptionUtils;
 
 @Data
-@AllArgsConstructor
 public class ApiError {
     private int status;
     private String message;
     private String developerMessage;
+
+    public ApiError(final int httpStatus, final Exception ex){
+        this.status = httpStatus;
+        this.message = ex.getMessage() == null ? ex.getClass().getSimpleName() : ex.getMessage();
+        this.developerMessage = ExceptionUtils.getRootCauseMessage(ex);
+    }
 
     @Override
     public final String toString() {
